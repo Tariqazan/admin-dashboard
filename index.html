@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mekashron</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+
+
+    <div class="topnav" id="myTopnav">
+        <img src="media/logo/img.png" alt="">
+        <a href="#" class="notification float-right"><img src="media/avatar/avatar.png" alt=""><span class="ml-2">Anddy's Makeover<i class="fa fa-caret-down mt-2 ml-2"></i></span></a>
+        <a href="#" class="notification float-right"><span><i class="fas fa-bell"></i></span>
+            <span class="badge">23</span></a>
+        <a href="#" class="notification float-right"><span><i class="fas fa-comment"></i></span>
+            <span class="badge">14</span></a>
+        <a href="#" class="float-right">
+            <select name="language" id="language">
+                <option value="english">English</option>
+            </select>
+        </a>
+        <a href="javascript:void(0);" class="icon" onclick="TopNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="topnav mt-1" id="mysubTopnav">
+        <a href="#" class="notification mr-5" style="color: black; font-size: 14px; font-weight: 400;">Invoices &
+            Receipts</a>
+        <a href="#" class="notification"><input type="date"></a>
+        <a href="#" class=""><input type="date"></a>
+        <a href="#" class=" "><input type="submit" value="Export" class="btn btn-primary"></a>
+
+        <a href="javascript:void(0);" class="icon" onclick="SubTopNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="closed-sidebar">
+        <button onclick="OpenNav()" class="pl-2 btn btn-outline-info"><i class="fas fa-book-open"></i></button>
+        <div class="mt-3 p-2">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3 4C1.9 4 1 4.9 1 6C1 7.1 1.9 8 3 8C4.1 8 5 7.11 5 6C5 4.89 4.11 4 3 4ZM10 2C8.9 2 8 2.89 8 4C8 5.11 8.9 6 10 6C11.1 6 12 5.11 12 4C12 2.89 11.11 2 10 2ZM17 0C15.9 0 15 0.9 15 2C15 3.1 15.9 4 17 4C18.1 4 19 3.11 19 2C19 0.89 18.11 0 17 0ZM1.5 9C0.67 9 0 9.67 0 10.5V15H1V20H5V15H6V10.5C6 9.67 5.33 9 4.5 9H1.5ZM8.5 7C7.67 7 7 7.67 7 8.5V13H8V18H12V13H13V8.5C13 7.67 12.33 7 11.5 7H8.5ZM15.5 5C14.67 5 14 5.67 14 6.5V11H15V16H19V11H20V6.5C20 5.67 19.33 5 18.5 5H15.5Z"
+                    fill="#2B2B2B" />
+            </svg>
+        </div>
+        <div class="mt-3 p-2">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M17.06 21.99H18.72C19.56 21.99 20.25 21.35 20.35 20.53L22 4.05H17V0H15.03V4.05H10.06L10.36 6.39C12.07 6.86 13.67 7.71 14.63 8.65C16.07 10.07 17.06 11.54 17.06 13.94V21.99ZM0 20.99V20H15.03V20.99C15.03 21.54 14.58 21.99 14.02 21.99H1.01C0.45 21.99 0 21.54 0 20.99ZM15.03 13.99C15.03 5.99 0 5.99 0 13.99H15.03ZM0.02 16H15.02V18H0.02V16Z"
+                    fill="#2B2B2B" />
+            </svg>
+        </div>
+        <div class="mt-3 p-2">
+            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M4 16H6V18H4V16ZM10 0L0 5V18H2V10H18V18H20V5L10 0ZM6 8H2V6H6V8ZM12 8H8V6H12V8ZM18 8H14V6H18V8ZM4 12H6V14H4V12ZM8 12H10V14H8V12ZM8 16H10V18H8V16ZM12 16H14V18H12V16Z"
+                    fill="#2B2B2B" />
+            </svg>
+        </div>
+        <div class="mt-3 p-2">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M4 0C2.89 0 2 0.89 2 2V10C2 11.11 2.89 12 4 12H16C17.11 12 18 11.11 18 10V2C18 0.89 17.11 0 16 0H4ZM4 2H16V10H4V2ZM2 13C0.89 13 0 13.89 0 15V18C0 19.11 0.89 20 2 20H18C19.11 20 20 19.11 20 18V15C20 13.89 19.11 13 18 13H2ZM6 15H18V18H6V15ZM7 15.75V17.25H11V15.75H7ZM13 15.75V17.25H17V15.75H13Z"
+                    fill="#2B2B2B" />
+            </svg>
+        </div>
+        <div class="mt-3 p-2">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3 4C1.9 4 1 4.9 1 6C1 7.1 1.9 8 3 8C4.1 8 5 7.11 5 6C5 4.89 4.11 4 3 4ZM10 2C8.9 2 8 2.89 8 4C8 5.11 8.9 6 10 6C11.1 6 12 5.11 12 4C12 2.89 11.11 2 10 2ZM17 0C15.9 0 15 0.9 15 2C15 3.1 15.9 4 17 4C18.1 4 19 3.11 19 2C19 0.89 18.11 0 17 0ZM1.5 9C0.67 9 0 9.67 0 10.5V15H1V20H5V15H6V10.5C6 9.67 5.33 9 4.5 9H1.5ZM8.5 7C7.67 7 7 7.67 7 8.5V13H8V18H12V13H13V8.5C13 7.67 12.33 7 11.5 7H8.5ZM15.5 5C14.67 5 14 5.67 14 6.5V11H15V16H19V11H20V6.5C20 5.67 19.33 5 18.5 5H15.5Z"
+                    fill="#2B2B2B" />
+            </svg>
+        </div>
+        <div class="mt-3 p-2">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3 4C1.9 4 1 4.9 1 6C1 7.1 1.9 8 3 8C4.1 8 5 7.11 5 6C5 4.89 4.11 4 3 4ZM10 2C8.9 2 8 2.89 8 4C8 5.11 8.9 6 10 6C11.1 6 12 5.11 12 4C12 2.89 11.11 2 10 2ZM17 0C15.9 0 15 0.9 15 2C15 3.1 15.9 4 17 4C18.1 4 19 3.11 19 2C19 0.89 18.11 0 17 0ZM1.5 9C0.67 9 0 9.67 0 10.5V15H1V20H5V15H6V10.5C6 9.67 5.33 9 4.5 9H1.5ZM8.5 7C7.67 7 7 7.67 7 8.5V13H8V18H12V13H13V8.5C13 7.67 12.33 7 11.5 7H8.5ZM15.5 5C14.67 5 14 5.67 14 6.5V11H15V16H19V11H20V6.5C20 5.67 19.33 5 18.5 5H15.5Z"
+                    fill="#2B2B2B" />
+            </svg>
+        </div>
+        <div class="mt-3 p-2">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M9.99984 13.5C9.07158 13.5 8.18134 13.1313 7.52497 12.4749C6.86859 11.8185 6.49984 10.9283 6.49984 10C6.49984 9.07174 6.86859 8.1815 7.52497 7.52513C8.18134 6.86875 9.07158 6.5 9.99984 6.5C10.9281 6.5 11.8183 6.86875 12.4747 7.52513C13.1311 8.1815 13.4998 9.07174 13.4998 10C13.4998 10.9283 13.1311 11.8185 12.4747 12.4749C11.8183 13.1313 10.9281 13.5 9.99984 13.5ZM17.4298 10.97C17.4698 10.65 17.4998 10.33 17.4998 10C17.4998 9.67 17.4698 9.34 17.4298 9L19.5398 7.37C19.7298 7.22 19.7798 6.95 19.6598 6.73L17.6598 3.27C17.5398 3.05 17.2698 2.96 17.0498 3.05L14.5598 4.05C14.0398 3.66 13.4998 3.32 12.8698 3.07L12.4998 0.42C12.4598 0.18 12.2498 0 11.9998 0H7.99984C7.74984 0 7.53984 0.18 7.49984 0.42L7.12984 3.07C6.49984 3.32 5.95984 3.66 5.43984 4.05L2.94984 3.05C2.72984 2.96 2.45984 3.05 2.33984 3.27L0.339839 6.73C0.209839 6.95 0.26984 7.22 0.45984 7.37L2.56984 9C2.52984 9.34 2.49984 9.67 2.49984 10C2.49984 10.33 2.52984 10.65 2.56984 10.97L0.45984 12.63C0.26984 12.78 0.209839 13.05 0.339839 13.27L2.33984 16.73C2.45984 16.95 2.72984 17.03 2.94984 16.95L5.43984 15.94C5.95984 16.34 6.49984 16.68 7.12984 16.93L7.49984 19.58C7.53984 19.82 7.74984 20 7.99984 20H11.9998C12.2498 20 12.4598 19.82 12.4998 19.58L12.8698 16.93C13.4998 16.67 14.0398 16.34 14.5598 15.94L17.0498 16.95C17.2698 17.03 17.5398 16.95 17.6598 16.73L19.6598 13.27C19.7798 13.05 19.7298 12.78 19.5398 12.63L17.4298 10.97Z"
+                    fill="#2B2B2B" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="sidenav" id="sidebar" style="visibility: hidden;">
+        <div class="brand-logo">
+            <img src="media/logo/img.png" alt="">
+            <button class="sidebtn" onclick="CloseNav()">X</button>
+        </div>
+        <div class="side-top">
+            <select name="option" id="option">
+                <option value="rest tel aviv">rest tel aviv</option>
+            </select>
+        </div>
+        <div class="side-option">
+            <button class="dropdown-btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3 4C1.9 4 1 4.9 1 6C1 7.1 1.9 8 3 8C4.1 8 5 7.11 5 6C5 4.89 4.11 4 3 4ZM10 2C8.9 2 8 2.89 8 4C8 5.11 8.9 6 10 6C11.1 6 12 5.11 12 4C12 2.89 11.11 2 10 2ZM17 0C15.9 0 15 0.9 15 2C15 3.1 15.9 4 17 4C18.1 4 19 3.11 19 2C19 0.89 18.11 0 17 0ZM1.5 9C0.67 9 0 9.67 0 10.5V15H1V20H5V15H6V10.5C6 9.67 5.33 9 4.5 9H1.5ZM8.5 7C7.67 7 7 7.67 7 8.5V13H8V18H12V13H13V8.5C13 7.67 12.33 7 11.5 7H8.5ZM15.5 5C14.67 5 14 5.67 14 6.5V11H15V16H19V11H20V6.5C20 5.67 19.33 5 18.5 5H15.5Z"
+                        fill="#2B2B2B" />
+                </svg>Human Resources
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <div class="side-option">
+            <button class="dropdown-btn"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.06 21.99H18.72C19.56 21.99 20.25 21.35 20.35 20.53L22 4.05H17V0H15.03V4.05H10.06L10.36 6.39C12.07 6.86 13.67 7.71 14.63 8.65C16.07 10.07 17.06 11.54 17.06 13.94V21.99ZM0 20.99V20H15.03V20.99C15.03 21.54 14.58 21.99 14.02 21.99H1.01C0.45 21.99 0 21.54 0 20.99ZM15.03 13.99C15.03 5.99 0 5.99 0 13.99H15.03ZM0.02 16H15.02V18H0.02V16Z"
+                        fill="#2B2B2B" />
+                </svg>
+                Products
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <div class="side-option">
+            <button class="dropdown-btn"><svg width="20" height="18" viewBox="0 0 20 18" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4 16H6V18H4V16ZM10 0L0 5V18H2V10H18V18H20V5L10 0ZM6 8H2V6H6V8ZM12 8H8V6H12V8ZM18 8H14V6H18V8ZM4 12H6V14H4V12ZM8 12H10V14H8V12ZM8 16H10V18H8V16ZM12 16H14V18H12V16Z"
+                        fill="#2B2B2B" />
+                </svg>
+                WareHouse
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <div class="side-option">
+            <button class="dropdown-btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4 0C2.89 0 2 0.89 2 2V10C2 11.11 2.89 12 4 12H16C17.11 12 18 11.11 18 10V2C18 0.89 17.11 0 16 0H4ZM4 2H16V10H4V2ZM2 13C0.89 13 0 13.89 0 15V18C0 19.11 0.89 20 2 20H18C19.11 20 20 19.11 20 18V15C20 13.89 19.11 13 18 13H2ZM6 15H18V18H6V15ZM7 15.75V17.25H11V15.75H7ZM13 15.75V17.25H17V15.75H13Z"
+                        fill="#2B2B2B" />
+                </svg>
+                POS
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <div class="side-option">
+            <button class="dropdown-btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3 4C1.9 4 1 4.9 1 6C1 7.1 1.9 8 3 8C4.1 8 5 7.11 5 6C5 4.89 4.11 4 3 4ZM10 2C8.9 2 8 2.89 8 4C8 5.11 8.9 6 10 6C11.1 6 12 5.11 12 4C12 2.89 11.11 2 10 2ZM17 0C15.9 0 15 0.9 15 2C15 3.1 15.9 4 17 4C18.1 4 19 3.11 19 2C19 0.89 18.11 0 17 0ZM1.5 9C0.67 9 0 9.67 0 10.5V15H1V20H5V15H6V10.5C6 9.67 5.33 9 4.5 9H1.5ZM8.5 7C7.67 7 7 7.67 7 8.5V13H8V18H12V13H13V8.5C13 7.67 12.33 7 11.5 7H8.5ZM15.5 5C14.67 5 14 5.67 14 6.5V11H15V16H19V11H20V6.5C20 5.67 19.33 5 18.5 5H15.5Z"
+                        fill="#2B2B2B" />
+                </svg>
+                Restaurant
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <div class="side-option">
+            <button class="dropdown-btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3 4C1.9 4 1 4.9 1 6C1 7.1 1.9 8 3 8C4.1 8 5 7.11 5 6C5 4.89 4.11 4 3 4ZM10 2C8.9 2 8 2.89 8 4C8 5.11 8.9 6 10 6C11.1 6 12 5.11 12 4C12 2.89 11.11 2 10 2ZM17 0C15.9 0 15 0.9 15 2C15 3.1 15.9 4 17 4C18.1 4 19 3.11 19 2C19 0.89 18.11 0 17 0ZM1.5 9C0.67 9 0 9.67 0 10.5V15H1V20H5V15H6V10.5C6 9.67 5.33 9 4.5 9H1.5ZM8.5 7C7.67 7 7 7.67 7 8.5V13H8V18H12V13H13V8.5C13 7.67 12.33 7 11.5 7H8.5ZM15.5 5C14.67 5 14 5.67 14 6.5V11H15V16H19V11H20V6.5C20 5.67 19.33 5 18.5 5H15.5Z"
+                        fill="#2B2B2B" />
+                </svg>Reports
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Invoices</a>
+                <a href="#">Labour Reports</a>
+                <a href="#">Hour Reports</a>
+                <a href="#">Day Reports</a>
+                <a href="#">Week Reports</a>
+                <a href="#">Month Reports</a>
+                <a href="#">Product Reports</a>
+                <a href="#">Category Reports</a>
+                <a href="#">Employee Reports</a>
+                <a href="#">Ingredient Reports</a>
+                <a href="#">Shift Reports</a>
+            </div>
+        </div>
+        <div class="side-option">
+            <button class="dropdown-btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.99984 13.5C9.07158 13.5 8.18134 13.1313 7.52497 12.4749C6.86859 11.8185 6.49984 10.9283 6.49984 10C6.49984 9.07174 6.86859 8.1815 7.52497 7.52513C8.18134 6.86875 9.07158 6.5 9.99984 6.5C10.9281 6.5 11.8183 6.86875 12.4747 7.52513C13.1311 8.1815 13.4998 9.07174 13.4998 10C13.4998 10.9283 13.1311 11.8185 12.4747 12.4749C11.8183 13.1313 10.9281 13.5 9.99984 13.5ZM17.4298 10.97C17.4698 10.65 17.4998 10.33 17.4998 10C17.4998 9.67 17.4698 9.34 17.4298 9L19.5398 7.37C19.7298 7.22 19.7798 6.95 19.6598 6.73L17.6598 3.27C17.5398 3.05 17.2698 2.96 17.0498 3.05L14.5598 4.05C14.0398 3.66 13.4998 3.32 12.8698 3.07L12.4998 0.42C12.4598 0.18 12.2498 0 11.9998 0H7.99984C7.74984 0 7.53984 0.18 7.49984 0.42L7.12984 3.07C6.49984 3.32 5.95984 3.66 5.43984 4.05L2.94984 3.05C2.72984 2.96 2.45984 3.05 2.33984 3.27L0.339839 6.73C0.209839 6.95 0.26984 7.22 0.45984 7.37L2.56984 9C2.52984 9.34 2.49984 9.67 2.49984 10C2.49984 10.33 2.52984 10.65 2.56984 10.97L0.45984 12.63C0.26984 12.78 0.209839 13.05 0.339839 13.27L2.33984 16.73C2.45984 16.95 2.72984 17.03 2.94984 16.95L5.43984 15.94C5.95984 16.34 6.49984 16.68 7.12984 16.93L7.49984 19.58C7.53984 19.82 7.74984 20 7.99984 20H11.9998C12.2498 20 12.4598 19.82 12.4998 19.58L12.8698 16.93C13.4998 16.67 14.0398 16.34 14.5598 15.94L17.0498 16.95C17.2698 17.03 17.5398 16.95 17.6598 16.73L19.6598 13.27C19.7798 13.05 19.7298 12.78 19.5398 12.63L17.4298 10.97Z"
+                        fill="#2B2B2B" />
+                </svg>
+                Settings
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main px-3">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="revenue"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="receipts"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="payment"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="payment-amount"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="">Document type</label><br>
+                            <input type="text" placeholder="Text">
+                        </div>
+                        <div class="col-md-1">
+                            <label for="">Currency</label><br>
+                            <select>
+                                <option value="$" selected>$</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Search</label><br>
+                            <input type="text" placeholder="Search">
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-outline-secondary button">Search</button>
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-outline-secondary button">Previous</button>
+                            <button class="btn btn-outline-secondary button">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead style="font-size: 18px; background-color: black; color: white;">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Date</th>
+                                    <th>Document</th>
+                                    <th>Number</th>
+                                    <th>Order#</th>
+                                    <th>Customer</th>
+                                    <th>Company</th>
+                                    <th>Total</th>
+                                    <th>Total(VAT)</th>
+                                    <th>Paid</th>
+                                    <th>Employee</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 14px;">
+                                <tr>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td><a href="#">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                </tr>
+                                <tr>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                </tr>
+                                <tr>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                </tr>
+                                <tr>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                    <td>Text</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Copyright © 2021 Mekashron Ltd. All Rights Reserved. <br> <span>Loading time:1.724 seconds</span>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/charts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
